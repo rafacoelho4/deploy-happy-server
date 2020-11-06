@@ -35,7 +35,7 @@ export default class Orphanage {
   @JoinColumn({ name: 'orphanage_id' })
   images: Image[];
 
-  @ManyToOne(() => User, user => user.orphanages)
-  @JoinColumn({ name: 'user_id' })
-  user_id: User;
+  // @ManyToOne(() => User, user => user.orphanages)
+  // @JoinColumn({ name: 'user_id' })
+  // user_id: User;
 }

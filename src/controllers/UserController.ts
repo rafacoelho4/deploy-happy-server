@@ -13,9 +13,11 @@ export default {
         try {
             const usersRepository = getRepository(User);
 
-            const users = await usersRepository.find({
-                relations: ['orphanages']
-            });
+            // const users = await usersRepository.find({
+            //     relations: ['orphanages']
+            // });
+
+            const users = await usersRepository.find();
         
             return response.status(200).json(userView.renderMany(users));
         } catch (error) {
@@ -29,9 +31,11 @@ export default {
 
             const usersRepository = getRepository(User);
 
-            const user = await usersRepository.findOneOrFail(id, {
-                relations: ['orphanages']
-            });
+            // const user = await usersRepository.findOneOrFail(id, {
+            //     relations: ['orphanages']
+            // });
+
+            const user = await usersRepository.findOneOrFail(id);
 
             // return response.status(200).json(user);
             return response.status(200).send(userView.render(user));

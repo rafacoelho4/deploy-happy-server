@@ -12,9 +12,9 @@ export default class User {
     @Column()
     senha: string;
 
-    @OneToMany(() => Orphanage, orphanage => orphanage.user_id, {
-        cascade: ['insert', 'update'],
-    })
-    @JoinColumn({ name: 'user_id' })
-    orphanages: Orphanage[];
+    // @OneToMany(() => Orphanage, orphanage => orphanage.user_id, {
+    //     cascade: ['insert', 'update'],
+    // })
+    // @JoinColumn({ name: 'user_id' })
+    // orphanages: Orphanage[];
 }
