@@ -7,7 +7,7 @@ export default {
             id: user.id,
             email: user.email,
             // senha: user.senha,
-            orphanages: orphanagesView.renderMany(user.orphanages)
+            // orphanages: orphanagesView.renderMany(user.orphanages)
         };
     },
     
