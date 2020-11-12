@@ -13,13 +13,14 @@ export default {
         try {
             const usersRepository = getRepository(User);
 
-            // const users = await usersRepository.find({
-            //     relations: ['orphanages']
-            // });
+            const users = await usersRepository.find({
+                relations: ['orphanages']
+            });
 
-            const users = await usersRepository.find();
+            // const users = await usersRepository.find();
         
             return response.status(200).json(userView.renderMany(users));
+            // return response.status(200).json({msg: "deu"});
         } catch (error) {
             return response.status(400).send(error);
         }
@@ -31,11 +32,11 @@ export default {
 
             const usersRepository = getRepository(User);
 
-            // const user = await usersRepository.findOneOrFail(id, {
-            //     relations: ['orphanages']
-            // });
+            const user = await usersRepository.findOneOrFail(id, {
+                relations: ['orphanages']
+            });
 
-            const user = await usersRepository.findOneOrFail(id);
+            // const user = await usersRepository.findOneOrFail(id);
 
             // return response.status(200).json(user);
             return response.status(200).send(userView.render(user));

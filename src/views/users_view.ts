@@ -3,10 +3,11 @@ import orphanagesView from "./orphanages_view";
 
 export default {
     render(user: User) {
+        console.log(user)
         return {
             id: user.id,
             email: user.email,
-            // senha: user.senha,
+            orphanages: user.orphanages
             // orphanages: orphanagesView.renderMany(user.orphanages)
         };
     },

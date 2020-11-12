@@ -26,8 +26,11 @@ export default class Orphanage {
   @Column()
   opening_hours: string;
 
-  @Column('boolean')
+  @Column()
   open_on_weekends: boolean;
+
+  @Column()
+  user_id: string;
 
   @OneToMany(() => Image, image => image.orphanage, {
     cascade: ['insert', 'update']
@@ -35,7 +38,7 @@ export default class Orphanage {
   @JoinColumn({ name: 'orphanage_id' })
   images: Image[];
 
-  // @ManyToOne(() => User, user => user.orphanages)
-  // @JoinColumn({ name: 'user_id' })
-  // user_id: User;
+  @ManyToOne(() => User, user => user.orphanages)
+  @JoinColumn({ name: 'user_id' })
+  user: User;
 }
