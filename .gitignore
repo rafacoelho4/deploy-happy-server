@@ -8,4 +8,5 @@ dist
 uploads/*
 !uploads/.gitkeep
 
-old/*
+old
+funcionando
